@@ -1,49 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Useritem from './Useritem';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
+import Spinner from '../Layouts/Spinner';
 
-export class Users extends Component {
-  state = {
-    users: [
-      {
-        id: 'id',
-        login: 'mojombo',
-        avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-        html_url: 'https://github.com/mojombo',
-      },
-      {
-        id: 'id',
-        login: 'mojombo',
-        avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-        html_url: 'https://github.com/mojombo',
-      },
-      {
-        id: 'id',
-        login: 'mojombo',
-        avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-        html_url: 'https://github.com/mojombo',
-      },
-      {
-        id: 'id',
-        login: 'mojombo',
-        avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-        html_url: 'https://github.com/mojombo',
-      },
-    ],
-  };
-  render() {
+const Users = ({ users, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div className="grid">
-        {this.state.users.map((user) => (
+        {users.map((user) => (
           <Useritem key={user.id} user={user} />
         ))}
       </div>
     );
   }
-}
+};
 
-Useritem.PropTypes = {
-  user: PropTypes.object.isRequired,
+Users.propTypes = {
+  users: propTypes.array.isRequired,
+  loading: propTypes.bool.isRequired,
+};
+
+Useritem.propTypes = {
+  user: propTypes.object.isRequired,
 };
 
 export default Users;
