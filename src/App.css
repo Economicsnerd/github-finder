@@ -47,6 +47,18 @@ img {
   overflow: hidden;
   padding: 0 2rem;
 }
+/* Dark Mode */
+.dark-mode {
+  background-color: #18191a;
+  color: white;
+}
+
+.dark-card {
+  background-color: #242526;
+  padding: 1rem;
+  border: 0px;
+  margin: 0.7rem 0;
+}
 
 /* Text Styles*/
 .x-large {
@@ -178,6 +190,11 @@ img {
 }
 
 /* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
