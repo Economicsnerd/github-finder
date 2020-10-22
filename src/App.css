@@ -251,7 +251,6 @@ img {
   margin: 0.3rem;
   background: var(--light-color);
   color: #333;
-  border-radius: 5px;
 }
 
 .alert {
